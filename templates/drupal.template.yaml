@@ -186,7 +186,7 @@ Parameters:
     Type: String
   DBMasterUserPassword:
     AllowedPattern: (?=\S)[^@/"\r\n\t\f\s]*
-    ConstraintDescription: Min 8 alphanumeric. Cannot contain white space, @, /, "
+    ConstraintDescription: 'Min 8 alphanumeric. Cannot contain white space, @, /, "'
     Description: The database admin account password
     MaxLength: '41'
     MinLength: '8'
@@ -290,8 +290,7 @@ Parameters:
       - php56
       - php70
       - php71
-    ConstraintDescription: 'Choose a valid PHP version. Values can be php56, php70,
-      php71 '
+    ConstraintDescription: 'Choose a valid PHP version. Values can be php56, php70, php71 '
     Default: php71
     Description: PHP version to be installed. PHP-5.6=php56, PHP-7.0=php70, PHP-7.1=php71
     Type: String
