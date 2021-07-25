@@ -156,47 +156,50 @@ Stages:
 
       # Input parameters for the stack.
       Parameters:
-        ReadCapacityUnits:      5
-        WriteCapacityUnits:     5
-        HashKeyElementName:     id
-      AutoScalingNotificationEmail: inbox@example.com
-      BastionSecurityGroupID: sg-7f16e910
-      DBAutoMinorVersionUpgrade: 'true' # default: true
-      DBBackupRetentionPeriod: '7'      # default: '7'
-      DBInstanceClass: 'db.t2.small'    # default: 'db.t2.small'
-      DBMasterUserPassword: dbpwdMaster842
-      DBMasterUsername: 'dbadmin'       # default: 'dbadmin'
-      DBMultiAZ: 'true'                 # default: 'true'
-      DrupalDbName: 'drupaldb'          # default: 'drupaldb'
-      DrupalDbPassword: dbpwdDrupal183
-      DrupalDbUsername: 'drupal'        # default: 'drupal'
-      DrupalSiteAdminEmail: inbox@example.com
-      DrupalSiteAdminPassword: pwdAdminDrupal5219
-      DrupalSiteAdminUsername: 'admin'  # default: 'admin'
-      DrupalSiteDomain: 'localhost.local'   # default: 'locahost.local'
-      DrupalSiteName: 'My Site'             # default: 'My Site'
-      DrupalVersion: '7'                    # default: '7'
-      KeyPair: to-be-defined
-      PhpVersion: 'php71'                   # default: 'php71'
-      PrivateSubnet1ID: subnet-fakeid
-      PrivateSubnet2ID: subnet-fakeid
-      PublicSubnet1ID: subnet-fakeid
-      PublicSubnet2ID: subnet-fakeid
-      QSS3BucketName: 'aws-quickstart'      # default: 'aws-quickstart'
-      QSS3BucketRegion: 'us-east-1'         # default: 'us-east-1'
-      QSS3KeyPrefix: 'quickstart-drupal/'   # default: 'quickstart-drupal/'
-      SSLCertificateId: ''                  # default: ''
-      VPCCIDR: '10.0.0.0/16'
-      VPCID: vpc-fakeid
-      WebServerDesiredCapacity: 2           # default: 2
-      WebServerInstanceType: 't2.micro'     # default: 't2.micro'
-      WebServerMaxSize: 12                  # default: 12
-      WebServerMinSize: 1                   # default: 1
-      CloudFrontEnable: 'true'              # default: 'true'
-      CloudFrontPriceClass: 'use-all-edge-locations'    #default: 'use-all-edge-locations'
-      CloudFrontAlias: 'cdn.default'        # default: 'cdn.default'
-      Route53HostedZoneId: ''               # default: ''
-      ElastiCacheEnable: 'true'             # default: 'true'
-      ElastiCacheAutoMinorVersionUpgrade: 'true'    # default: 'true'
-      ElastiCacheNodeType: 'cache.t2.micro' # default: 'cache.t2.micro'
-      ElastiCacheNumberOfNodes: 2           # default: 2
+        AutoScalingNotificationEmail: inbox@example.com
+        KeyPair: to-be-defined
+        BastionSecurityGroupID: sg-7f16e910
+        ## Database parameters
+        DBAutoMinorVersionUpgrade: 'true' # default: true
+        DBBackupRetentionPeriod: '7'      # default: '7'
+        DBInstanceClass: 'db.t3.small'    # default: 'db.t3.small'
+        DBMasterUserPassword: dbpwdMaster842
+        DBMasterUsername: 'dbadmin'       # default: 'dbadmin'
+        DBMultiAZ: 'true'                 # default: 'true'
+        ## Drupal configuration parameters
+        DrupalDbName: 'drupaldb'          # default: 'drupaldb'
+        DrupalDbPassword: 'dbpwdDrupal183'
+        DrupalDbUsername: 'drupal'        # default: 'drupal'
+        DrupalSiteAdminEmail: inbox@example.com
+        DrupalSiteAdminPassword: 'pwdAdminDrupal5219'
+        DrupalSiteAdminUsername: 'admin'  # default: 'admin'
+        DrupalSiteDomain: 'localhost.local'   # default: 'locahost.local'
+        DrupalSiteName: 'My Site'             # default: 'My Site'
+        DrupalVersion: '7'                    # default: '7'
+        PhpVersion: 'php71'                   # default: 'php71'
+        ## Network parameters
+        VPCCIDR: '10.0.0.0/16'
+        VPCID: vpc-fakeid
+        PrivateSubnet1ID: subnet-fakeid
+        PrivateSubnet2ID: subnet-fakeid
+        PublicSubnet1ID: subnet-fakeid
+        PublicSubnet2ID: subnet-fakeid
+        QSS3BucketName: 'aws-quickstart'      # default: 'aws-quickstart'
+        QSS3BucketRegion: 'us-east-1'         # default: 'us-east-1'
+        QSS3KeyPrefix: 'quickstart-drupal/'   # default: 'quickstart-drupal/'
+        SSLCertificateId: ''                  # default: ''
+        ## Auto-scaling parameters
+        WebServerDesiredCapacity: 2           # default: 2
+        WebServerInstanceType: 't3a.micro'     # default: 't3a.micro'
+        WebServerMaxSize: 12                  # default: 12
+        WebServerMinSize: 1                   # default: 1
+        ## CloudFront parameters
+        CloudFrontEnable: 'true'              # default: 'true'
+        CloudFrontPriceClass: 'use-all-edge-locations'    #default: 'use-all-edge-locations'
+        CloudFrontAlias: 'cdn.default'        # default: 'cdn.default'
+        Route53HostedZoneId: ''               # default: ''
+        ## ElastiCache parameters
+        ElastiCacheEnable: 'true'             # default: 'true'
+        ElastiCacheAutoMinorVersionUpgrade: 'true'    # default: 'true'
+        ElastiCacheNodeType: 'cache.t3.micro' # default: 'cache.t3.micro'
+        ElastiCacheNumberOfNodes: 2           # default: 2
